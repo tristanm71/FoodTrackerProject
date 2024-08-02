@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    home
+{% endblock %}
+
+{% block main %}
+    <h2 style="padding-bottom:50px;">
+        Welcome to Food Tracker
+    </h2>
+    <h3>
+        {{ date }}
+    </h3>
+    <h3>
+        Calorie Goal: {{ goal }}
+    </h3>
+    <div>
+        <table>
+            <tr>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Food
+                </th>
+                <th>
+                    Protein
+                </th>
+                <th>
+                    Fats
+                </th>
+                <th>
+                    Carbs
+                </th>
+                <th>
+                    Calories
+                </th>
+                <th>
+                    Portion
+                </th>
+            </tr>
+            {% for row in list %}
+                <tr>
+                    <td>
+                        {{ row["datetime"]}}
+                    </td>
+                    <td>
+                        {{ row["name"]}}
+                    </td>
+                    <td>
+                        {{ row["protein"]}}
+                    </td>
+                    <td>
+                        {{ row["fats"]}}
+                    </td>
+                    <td>
+                        {{ row["carbs"]}}
+                    </td>
+                    <td>
+                        {{ row["calories"]}}
+                    </td>
+                    <td>
+                        {{ row["portion"]}}
+                    </td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <th>
+                    Total
+                </th>
+                <td>
+
+                </td>
+                <td>
+                    {{"%.2f"| format(protein) }}
+                </td>
+                <td>
+                    {{"%.2f"| format(fats) }}
+                </td>
+                <td>
+                    {{"%.2f"| format(carbs) }}
+                </td>
+                <td>
+                    {{"%.2f"| format(calories) }}
+                </td>
+                <td>
+
+            </tr>
+        </table>
+    </div>
+{% endblock %}

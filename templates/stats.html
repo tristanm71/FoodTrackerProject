@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stats
+{% endblock %}
+
+{% block main %}
+<h2>
+    Enter your stats
+</h2>
+<form action="/stats" method="post">
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="feet" placeholder="Feet" type="number" min="1">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="inches" placeholder="Inches" type="number" min="0">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="weight" placeholder="Weight" type="number">
+    </div>
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="calorie" placeholder="Daily Calorie Goal" type="number">
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+</form>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Logs
+{% endblock %}
+
+{% block main %}
+    <h2 style="padding-bottom:50px;">
+        Food Logs
+    </h2>
+    <div>
+        <table>
+            <tr>
+                <th>
+                    Date
+                </th>
+                <th>
+                    Food
+                </th>
+                <th>
+                    Protein
+                </th>
+                <th>
+                    Fats
+                </th>
+                <th>
+                    Carbs
+                </th>
+                <th>
+                    Calories
+                </th>
+                <th>
+                    Portion
+                </th>
+            </tr>
+            {% for row in list %}
+                <tr>
+                    <td>
+                        {{ row["datetime"]}}
+                    </td>
+                    <td>
+                        {{ row["name"]}}
+                    </td>
+                    <td>
+                        {{ row["protein"]}}
+                    </td>
+                    <td>
+                        {{ row["fats"]}}
+                    </td>
+                    <td>
+                        {{ row["carbs"]}}
+                    </td>
+                    <td>
+                        {{ row["calories"]}}
+                    </td>
+                    <td>
+                        {{ row["portion"]}}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

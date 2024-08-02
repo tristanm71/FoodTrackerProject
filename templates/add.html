@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Food
+{% endblock %}
+
+{% block main %}
+    <h2 style="padding-bottom:50px;">
+        Add Food
+    </h2>
+    <form action="/add" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="food" placeholder="fdc_ID" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="portion" placeholder="Portions" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+{% endblock %}

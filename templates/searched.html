@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Searched
+{% endblock %}
+
+{% block main %}
+    <div>
+        <table>
+            <tr>
+                <th>
+                    Food Name
+                </th>
+                <th>
+                    Protein
+                </th>
+                <th>
+                    Carbs
+                </th>
+                <th>
+                    Fats
+                </th>
+                <th>
+                    Calories
+                </th>
+                <th>
+                    fdc_id
+                </th>
+            </tr>
+            {% for row in foods %}
+                <tr>
+                    <td id="name">
+                        {{ row["name"] }}
+                    </td>
+                    <td>
+                        {{ nutrient[row["fdc_id"]][0]["amount"] }}g
+                    </td>
+                    <td>
+                        {{ nutrient[row["fdc_id"]][1]["amount"] }}g
+                    </td>
+                    <td>
+                        {{ nutrient[row["fdc_id"]][2]["amount"] }}g
+                    </td>
+                    <td>
+                        {{ nutrient[row["fdc_id"]][3]["amount"] }}
+                    </td>
+                    <td>
+                        {{ row["fdc_id"] }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

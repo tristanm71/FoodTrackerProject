@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block main %}
+    <h2 style="padding-bottom:50px;">
+        Search Food
+    </h2>
+    <form action="/search" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="food" placeholder="Food" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+{% endblock %}
